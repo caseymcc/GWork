@@ -18,6 +18,7 @@
 #include <Gwork/Input/GLFW3.h>
 #include <iostream>
 
+
 static Gwk::Input::GLFW3 GworkInput;
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -41,7 +42,7 @@ static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
     GworkInput.ProcessScroll(xoffset, yoffset);
 }
 
-int main()
+int main(int argc, char *argv[])
 {
     const Gwk::Point screenSize(1024,768);
 
@@ -94,6 +95,7 @@ int main()
     canvas->SetDrawBackground(true);
     canvas->SetBackgroundColor(Gwk::Color(150, 170, 170, 255));
 
+    
     // Create our unittest control (which is a Window with controls in it)
     auto unit = new TestFrame(canvas);
     GworkInput.Initialize(canvas);
